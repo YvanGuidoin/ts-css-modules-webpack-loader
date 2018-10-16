@@ -1,0 +1,23 @@
+{
+  "name": "ts-css-modules-webpack-loader",
+  "version": "1.0.0",
+  "description": "Create Typescript definitions for CSS modules from css-loader output",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:YvanGuidoin/ts-css-modules-webpack-loader.git"
+  },
+  "keywords": [
+    "typescript",
+    "css",
+    "webpack",
+    "loader"
+  ],
+  "author": "Yvan Guidoin",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "loader-utils": "^1.1.0",
+    "schema-utils": "^1.0.0"
+  }
+}
