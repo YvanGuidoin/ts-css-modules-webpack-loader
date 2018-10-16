@@ -15,7 +15,18 @@
   ],
   "author": "Yvan Guidoin",
   "license": "ISC",
-  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "babel-jest": "^23.6.0",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^1.0.0",
+    "jest": "^23.6.0",
+    "memory-fs": "^0.4.1",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.20.2"
+  },
   "dependencies": {
     "loader-utils": "^1.1.0",
     "schema-utils": "^1.0.0"
