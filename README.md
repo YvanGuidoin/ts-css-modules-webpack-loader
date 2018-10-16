@@ -1,8 +1,10 @@
 # css-ts-webpack-loader
 
+[![Build Status](https://travis-ci.com/YvanGuidoin/ts-css-modules-webpack-loader.svg?branch=master)](https://travis-ci.com/YvanGuidoin/ts-css-modules-webpack-loader)
+
 Take the output of [css-loader](https://github.com/webpack-contrib/css-loader) with css modules and creates a typescript definition of them:
 
-# Install
+### Install
 
 WIP
 
