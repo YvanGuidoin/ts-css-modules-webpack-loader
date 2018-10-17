@@ -1,4 +1,4 @@
-# css-ts-webpack-loader
+# ts-css-modules-webpack-loader
 
 [![Build Status](https://travis-ci.com/YvanGuidoin/ts-css-modules-webpack-loader.svg?branch=master)](https://travis-ci.com/YvanGuidoin/ts-css-modules-webpack-loader)
 
