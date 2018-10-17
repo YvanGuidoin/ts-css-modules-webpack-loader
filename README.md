@@ -6,7 +6,9 @@ Take the output of [css-loader](https://github.com/webpack-contrib/css-loader) w
 
 ### Install
 
-WIP
+```
+npm i -D ts-css-modules-webpack-loader
+```
 
 ### Example
 

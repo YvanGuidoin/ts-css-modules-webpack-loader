@@ -5,15 +5,17 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:YvanGuidoin/ts-css-modules-webpack-loader.git"
+    "url": "https://github.com/YvanGuidoin/ts-css-modules-webpack-loader.git"
   },
   "keywords": [
     "typescript",
+    "definitions",
     "css",
+    "css-modules",
     "webpack",
     "loader"
   ],
-  "author": "Yvan Guidoin",
+  "author": "Yvan Guidoin <yvan.guidoin@gmail.com>",
   "license": "ISC",
   "scripts": {
     "test": "jest"

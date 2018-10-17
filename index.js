@@ -20,15 +20,12 @@ const schema = {
   }
 };
 
-module.exports = function(content, map, meta) {
-  const callback = this.async();
-  const query = loaderUtils.getOptions(this);
-  validateOptions(schema, query, "ts-css-modules-webpack-loader");
-
-  const destination = query.dest || this.context;
-  const rootContext = query.root || this.rootContext;
-  const banner = query.banner || undefined;
-
+/**
+ * Extract exports from css-loader output
+ * @param {string} content
+ * @returns {Array<string>}
+ */
+function extractLines(content) {
   let cssModulesLine = [];
   let inExports = false;
   for (const line of content.split("\n")) {
@@ -40,15 +37,39 @@ module.exports = function(content, map, meta) {
       cssModulesLine.push(line);
     }
   }
+  return cssModulesLine;
+}
+
+/**
+ * Clean exports
+ * @param {Array<string>} moduleLines
+ * @returns {Array<string>}
+ */
+function cleanLines(moduleLines) {
+  return moduleLines.reduce((acc, v) => {
+    const cleanValue = /^\t?"(.+)":\s?"(.+)",?/.exec(v);
+    if (cleanValue.length === 3) acc.push(`${cleanValue[1]}`);
+    return acc;
+  }, []);
+}
+
+module.exports = function(content, map, meta) {
+  const callback = this.async();
+  const query = loaderUtils.getOptions(this);
+  validateOptions(schema, query, "ts-css-modules-webpack-loader");
+
+  const destination = query.dest || this.context;
+  const rootContext = query.root || this.rootContext;
+  const banner = query.banner || undefined;
+
+  const cssModulesLine = extractLines(content);
 
   const inFilePrefix = banner ? `${banner}\n` : "";
-  const stringDeclarations = cssModulesLine
-    .map(v => {
-      const cleanValue = /^\t?"(.+)":\s?"(.+)",?/.exec(v);
-      if (cleanValue.length === 3)
-        return `export const ${cleanValue[1]}: string;`;
-      return "";
-    })
+
+  const cleanModules = cleanLines(cssModulesLine);
+
+  const stringDeclarations = cleanModules
+    .map(v => `export const ${v}: string;`)
     .join("\n");
   const tsString = inFilePrefix + stringDeclarations;
 

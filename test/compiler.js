@@ -2,12 +2,17 @@ const path = require("path");
 const webpack = require("webpack");
 const memoryfs = require("memory-fs");
 
+/**
+ * @param {string} fixture
+ * @returns Promise<Webpack.Stats>
+ */
 module.exports = (fixture, options = {}) => {
+  const folderHappening = path.resolve(process.cwd(), "test", "styles");
   const compiler = webpack({
-    context: __dirname,
+    context: folderHappening,
     entry: `./${fixture}`,
     output: {
-      path: path.resolve(__dirname),
+      path: folderHappening,
       filename: "bundle.js"
     },
     module: {
@@ -19,7 +24,7 @@ module.exports = (fixture, options = {}) => {
             {
               loader: path.resolve(__dirname, "../index.js"),
               options: {
-                root: "./test"
+                root: folderHappening
               }
             },
             {
