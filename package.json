@@ -1,6 +1,6 @@
 {
   "name": "ts-css-modules-webpack-loader",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Create Typescript definitions for CSS modules from css-loader output",
   "main": "index.js",
   "repository": {
