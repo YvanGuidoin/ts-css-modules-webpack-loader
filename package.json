@@ -21,19 +21,19 @@
     "test": "jest"
   },
   "peerDependencies": {
-    "css-loader": "1.x"
+    "css-loader": "2.x"
   },
   "devDependencies": {
     "babel-jest": "^23.6.0",
     "babel-preset-env": "^1.7.0",
-    "css-loader": "^1.0.1",
+    "css-loader": "^2.1.0",
     "jest": "^23.6.0",
     "memory-fs": "^0.4.1",
     "style-loader": "^0.23.1",
-    "webpack": "^4.25.1"
+    "webpack": "^4.28.1"
   },
   "dependencies": {
-    "loader-utils": "^1.1.0",
+    "loader-utils": "^1.2.3",
     "schema-utils": "^1.0.0"
   }
 }
