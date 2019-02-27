@@ -1,0 +1,10 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "declaration": false,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "target": "esnext"
+  },
+  "include": ["test/styles/"]
+}

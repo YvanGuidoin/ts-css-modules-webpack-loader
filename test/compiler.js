@@ -36,6 +36,17 @@ module.exports = (fixture, options = {}) => {
               }
             }
           ]
+        },
+        {
+          test: /\.ts$/,
+          use: [
+            {
+              loader: "ts-loader",
+              options: {
+                transpileOnly: true
+              }
+            }
+          ]
         }
       ]
     }
