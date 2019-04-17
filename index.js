@@ -53,7 +53,7 @@ function cleanLines(moduleLines) {
   }, []);
 }
 
-module.exports = function(content, map, meta) {
+module.exports = function(content, ...rest) {
   const callback = this.async();
   const query = loaderUtils.getOptions(this);
   validateOptions(schema, query, "ts-css-modules-webpack-loader");
@@ -63,11 +63,9 @@ module.exports = function(content, map, meta) {
   const banner = query.banner || undefined;
 
   const cssModulesLine = extractLines(content);
-
-  const inFilePrefix = banner ? `${banner}\n` : "";
-
   const cleanModules = cleanLines(cssModulesLine);
 
+  const inFilePrefix = banner ? `${banner}\n` : "";
   const stringDeclarations = cleanModules
     .map(v => `export const ${v}: string;`)
     .join("\n");
@@ -77,12 +75,17 @@ module.exports = function(content, map, meta) {
     ? path.relative(rootContext, this.resourcePath)
     : path.basename(this.resourcePath);
   const destFile = path.join(destination, `${relativeFile}.d.ts`);
-  mkdirDeep(path.dirname(destFile));
+  try {
+    mkdirDeep(path.dirname(destFile));
+  } catch (err) {
+    callback(err);
+    return;
+  }
 
-  fs.writeFile(destFile, tsString, err => {
+  fs.writeFile(destFile, tsString, { encoding: "utf-8" }, err => {
     if (err) {
       callback(err);
       return;
-    } else callback(null, content, map, meta);
+    } else callback(null, content, ...rest);
   });
 };

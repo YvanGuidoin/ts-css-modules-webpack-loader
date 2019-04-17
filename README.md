@@ -2,7 +2,9 @@
 
 [![Build Status](https://travis-ci.com/YvanGuidoin/ts-css-modules-webpack-loader.svg?branch=master)](https://travis-ci.com/YvanGuidoin/ts-css-modules-webpack-loader)
 
-Take the output of [css-loader](https://github.com/webpack-contrib/css-loader) with css modules and creates a typescript definition of them:
+Take the output of [css-loader](https://github.com/webpack-contrib/css-loader) with css modules and creates a typescript definition of them
+
+For a simpler setup and a verify mode look at [css-modules-typescript-loader](https://github.com/seek-oss/css-modules-typescript-loader)
 
 ### Install
 
