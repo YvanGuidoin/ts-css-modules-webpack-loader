@@ -24,19 +24,19 @@
     "verbose": true
   },
   "peerDependencies": {
-    "css-loader": "2.x"
+    "css-loader": "3.x"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.3",
-    "@babel/preset-env": "^7.4.3",
-    "babel-jest": "^24.7.1",
-    "css-loader": "^2.1.1",
-    "jest": "^24.7.1",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel-jest": "^24.8.0",
+    "css-loader": "^3.0.0",
+    "jest": "^24.8.0",
     "memory-fs": "^0.4.1",
     "style-loader": "^0.23.1",
-    "ts-loader": "^5.3.3",
-    "typescript": "^3.4.3",
-    "webpack": "^4.30.0"
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.2",
+    "webpack": "^4.35.0"
   },
   "dependencies": {
     "loader-utils": "^1.2.3",

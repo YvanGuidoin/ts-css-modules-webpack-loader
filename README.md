@@ -31,9 +31,9 @@ npm i -D ts-css-modules-webpack-loader
       {
         loader: require.resolve("css-loader"),
         options: {
-          modules: true,
-          localIdentName: "[name]___[local]",
-          camelCase: false,
+          modules: {
+            localIdentName: "[name]___[local]",
+          },
         },
       },
       {
