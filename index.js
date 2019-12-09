@@ -62,8 +62,6 @@ module.exports = function(content, ...rest) {
   const rootContext = query.root || this.rootContext;
   const banner = query.banner || undefined;
 
-  console.log(content, ...rest);
-
   const cssModulesLine = extractLines(content);
   const cleanModules = cleanLines(cssModulesLine);
 
