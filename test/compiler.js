@@ -7,7 +7,7 @@ const memoryfs = require("memory-fs");
  * @returns Promise<Webpack.Stats>
  */
 module.exports = (fixture, options = {}) => {
-  const folderHappening = path.resolve(process.cwd(), "test", "styles");
+  const folderHappening = path.resolve("test", "styles");
   const compiler = webpack({
     context: folderHappening,
     entry: `./${fixture}`,
@@ -31,7 +31,7 @@ module.exports = (fixture, options = {}) => {
               loader: "css-loader",
               options: {
                 modules: {
-                  localIdentName: "[name]___[local]"
+                  localIdentName: "[name]__[local]"
                 }
               }
             }
